@@ -9,11 +9,16 @@ __pycache__/
 *.pyd
 *.pyo
 
-# Model files
-*.task
-*.pkl
-*.h5
-*.model
+# Artifacts (models, task files)
+artifacts/
+
+# Data
+data/
+
+# Output files
+*.txt
+*.png
+*.log
 
 # VS Code
 .vscode/

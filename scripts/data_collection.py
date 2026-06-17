@@ -8,8 +8,8 @@ import os
 import time
 import urllib.request
 
-CSV_FILE = 'dataset.csv'
-MODEL_PATH = 'hand_landmarker.task'
+CSV_FILE = 'data/dataset.csv'
+MODEL_PATH = 'artifacts/hand_landmarker.task'
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading hand landmarker model...")

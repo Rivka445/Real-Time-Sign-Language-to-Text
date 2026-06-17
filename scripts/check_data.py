@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-CSV_FILE = 'dataset.csv'
+CSV_FILE = 'data/dataset.csv'
 
 if not os.path.exists(CSV_FILE):
     print(f"Error: {CSV_FILE} not found! Make sure you ran data_collection.py first.")
