@@ -1,0 +1,20 @@
+[project]
+name = "israeli-sign-language-translator"
+version = "0.1.0"
+description = "Real-time Israeli Sign Language (ISL) to text translator using Computer Vision and Machine Learning"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "opencv-python",
+    "mediapipe",
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    "matplotlib"
+]
+requires-python = ">=3.9"
+
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"

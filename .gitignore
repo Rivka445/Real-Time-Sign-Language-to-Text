@@ -1,0 +1,28 @@
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+
+# Dataset & model files
+dataset.csv
+*.pkl
+*.h5
+*.model
+
+# VS Code
+.vscode/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
