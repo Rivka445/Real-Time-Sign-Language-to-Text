@@ -9,8 +9,8 @@ __pycache__/
 *.pyd
 *.pyo
 
-# Dataset & model files
-dataset.csv
+# Model files
+*.task
 *.pkl
 *.h5
 *.model
