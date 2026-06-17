@@ -1,4 +1,4 @@
-# Real-Time Sign Language to Text
+# 🤟 Real-Time Sign Language to Text
 
 A real-time Hebrew Sign Language recognition system that translates hand signs into text using computer vision and machine learning.
 
@@ -6,15 +6,15 @@ The system captures hand gestures through a webcam, extracts 21 landmark points 
 
 ---
 
-## Demo
+## 🎬 Demo
 
-| Detecting a sign | Accumulated text |
+| 👁️ Detecting a sign | 📝 Accumulated text |
 |---|---|
 | `Current: ALEF (92%)` | `Text: אבג` |
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ```
 live_prediction.py          # Entry point — main loop
@@ -38,26 +38,28 @@ artifacts/
   hand_landmarker.task      # MediaPipe model file
 ```
 
-### Pipeline
+### 🔄 Pipeline
 
 ```
-Webcam frame
-    → FeatureExtractor   (126 normalized floats: 2 hands × 21 points × x,y,z)
-    → SignClassifier     (predicted label + confidence)
-    → TextAccumulator    (stable for 20 frames → add to sentence)
-    → Renderer           (draw UI overlay on frame)
+📷 Webcam frame
+    → 🖐️ FeatureExtractor   (126 normalized floats: 2 hands × 21 points × x,y,z)
+    → 🧠 SignClassifier     (predicted label + confidence)
+    → 📝 TextAccumulator    (stable for 20 frames → add to sentence)
+    → 🖥️ Renderer           (draw UI overlay on frame)
 ```
-
+Demo
+Detecting a sign	Accumulated text
+Current: ALEF (92%)	Text: אבג
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Requirements
+### ✅ Requirements
 
 - Python 3.10+
 - Webcam
 
-### Installation
+### 📦 Installation
 
 ```bash
 git clone https://github.com/Rivka445/Real-Time-Sign-Language-to-Text.git
@@ -78,7 +80,7 @@ print('Downloaded.')
 "
 ```
 
-### Run with Docker
+### 🐳 Run with Docker
 
 ```bash
 docker build -t sign-language-translator .
@@ -87,9 +89,9 @@ docker run --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix sign-langua
 
 ---
 
-## Usage
+## 📖 Usage
 
-### 1. Collect training data
+### 1. 🎥 Collect training data
 
 ```bash
 python scripts/data_collection.py
@@ -98,7 +100,7 @@ python scripts/data_collection.py
 Enter the letter name when prompted (e.g. `ALEF`, `BEIT`, `SPACE`).
 Collect at least 100 samples per letter in varied lighting and distances.
 
-### 2. Train the model
+### 2. 🧠 Train the model
 
 ```bash
 python scripts/train_model.py
@@ -106,7 +108,7 @@ python scripts/train_model.py
 
 Outputs `artifacts/model.pkl` and a confusion matrix image.
 
-### 3. Run the live app
+### 3. ▶️ Run the live app
 
 ```bash
 python live_prediction.py
@@ -114,15 +116,15 @@ python live_prediction.py
 
 | Key | Action |
 |-----|--------|
-| `Q` | Quit |
-| `C` | Clear sentence |
-| `S` | Save sentence to `exported_text.txt` |
+| `Q` | 🚪 Quit |
+| `C` | 🗑️ Clear sentence |
+| `S` | 💾 Save sentence to `exported_text.txt` |
 
-> **Note:** Click on the camera window before using keyboard shortcuts.
+> **💡 Note:** Click on the camera window before using keyboard shortcuts.
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 All settings are in `src/config.py`:
 
@@ -145,7 +147,7 @@ TRANSLATION_MAP = {
 
 ---
 
-## Running Tests
+## 🧪 Running Tests
 
 ```bash
 python tests/test_text_accumulator.py
@@ -154,13 +156,13 @@ python tests/test_classifier.py
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Tool | Purpose |
 |------|---------|
-| MediaPipe | Hand landmark detection |
-| scikit-learn | Random Forest classifier |
-| OpenCV | Camera capture and UI |
-| Pillow | Unicode/Hebrew text rendering |
-| NumPy / Pandas | Data processing |
-| Matplotlib / Seaborn | Evaluation charts |
+| 🖐️ MediaPipe | Hand landmark detection |
+| 🌲 scikit-learn | Random Forest classifier |
+| 📷 OpenCV | Camera capture and UI |
+| 🖼️ Pillow | Unicode/Hebrew text rendering |
+| 🔢 NumPy / Pandas | Data processing |
+| 📊 Matplotlib / Seaborn | Evaluation charts |
