@@ -14,9 +14,13 @@ ROOT_DIR = Path(__file__).parent.parent
 # MODEL_FILE: trained Random Forest classifier saved after running scripts/train_model.py
 MODEL_FILE = ROOT_DIR / "artifacts" / "model.pkl"
 
+import os
+
 # TASK_MODEL_PATH: MediaPipe hand landmark detection model.
 # NOTE: path must not contain non-ASCII characters (e.g. Hebrew) — MediaPipe will fail to load it.
-TASK_MODEL_PATH = Path(r"C:\Users\user1\hand_landmarker.task")
+# Override with env var HAND_LANDMARKER_PATH if the artifacts folder path contains non-ASCII characters.
+_default_task_path = ROOT_DIR / "artifacts" / "hand_landmarker.task"
+TASK_MODEL_PATH = Path(os.environ.get("HAND_LANDMARKER_PATH", str(_default_task_path)))
 
 # CSV_FILE: raw dataset collected by scripts/data_collection.py
 CSV_FILE = ROOT_DIR / "data" / "dataset.csv"
