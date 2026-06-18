@@ -9,8 +9,8 @@ __pycache__/
 *.pyd
 *.pyo
 
-# Artifacts (models, task files)
-artifacts/
+# Artifacts (task files only)
+artifacts/*.task
 
 # Data
 data/
